@@ -1,0 +1,10 @@
+export function mountFinale(){
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const video=document.querySelector('#ambient-video');let loaded=false;
+ function sync(){if(reduced.matches||navigator.connection?.saveData){video.pause();video.removeAttribute('src');video.load();loaded=false;return;}
+  if(!loaded){video.src=innerWidth<700?'/ambient-mobile.mp4':'/ambient-loop.mp4';video.load();loaded=true;}
+  if(document.hidden)video.pause();else video.play().catch(()=>{});
+ }
+ document.addEventListener('visibilitychange',sync);reduced.addEventListener('change',sync);sync();
+ return()=>{video.pause();};
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050506"><meta name="description" content="Две перламутровые формы для интерфейсов. WebP, SVG и интерактивное 3D в одной небольшой библиотеке.">
+  <title>Moon Toybox — формы из лунного света</title>
+  <link rel="preload" href="/icons/moon-preview.webp" as="image">
+  <link rel="preload" href="/cardboard-box-preview.webp" as="image">
+  <link rel="stylesheet" href="/toybox.css">
+  <style>html.fonts-loading body>*:not(.page-loader){visibility:hidden!important}.page-loader{display:none}html.fonts-loading .page-loader{display:grid;position:fixed;inset:0;z-index:10000;place-items:center;background:#050506}.page-loader img{width:112px;height:112px;object-fit:contain}</style>
+  <script>document.documentElement.classList.add('fonts-loading');addEventListener('DOMContentLoaded',()=>{const fonts=[document.fonts.load('400 16px "Sansation"'),document.fonts.load('300 16px "Sansation"'),document.fonts.load('400 16px "Bellota"'),document.fonts.load('400 16px "Crafty Girls"')];Promise.allSettled(fonts).then(()=>{document.documentElement.classList.remove('fonts-loading');document.querySelector('.page-loader')?.remove();dispatchEvent(new Event('resize'));});});</script>
+</head>
+<body>
+<div class="page-loader" role="status" aria-label="Загрузка Moon Toybox"><img src="/icons/moon-preview.webp" width="112" height="112" alt=""></div>
+<div class="ambient-backdrop" aria-hidden="true"><video id="ambient-video" muted loop playsinline preload="none" poster="/ambient-poster.jpg"></video></div>
+<a class="skip" href="#collection">К коллекции</a>
+<header class="shell">
+  <a class="brand brand-logo" href="/toybox.html" aria-label="Moon Toybox — главная"><img src="/icons/moon-preview.webp" data-moon-icon="moon" width="80" height="80" alt=""><span class="brand-wordmark"><span class="w-moon">moon</span> <span class="w-toybox">toybox</span></span></a>
+  <nav aria-label="Главная"><a href="#collection">Коллекция</a><a href="#how">Подключение</a></nav>
+  <a class="download" href="/moon-toybox-0.1.0.tgz" download>Скачать набор</a>
+</header>
+<main class="shell">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title">Формы из<br>лунного <span>света.</span></h1>
+      <p class="hero-description">Чуть больше характера для твоего интерфейса. Две перламутровых объекта — от лёгкой иконки до живого 3D.</p>
+      <div class="hero-actions"><a class="primary" href="#collection">Рассмотреть формы</a><a class="text-link" href="#collection">В лабораторию</a></div>
+    </div>
+    <div class="still-life" role="img" aria-label="Лунная жемчужина, лунный узел на чёрном фоне">
+      <svg class="orbital-lines" viewBox="0 0 600 600" fill="none" aria-hidden="true"><ellipse cx="300" cy="300" rx="275" ry="112" transform="rotate(-32 300 300)"/><ellipse cx="300" cy="300" rx="213" ry="268" transform="rotate(32 300 300)"/><circle cx="300" cy="300" r="238"/></svg>
+      <img class="scene-moon" src="/icons/moon-high.webp" width="384" height="384" alt="" fetchpriority="high">
+      
+      
+      <img class="scene-knot" src="/icons/knot-high.webp" width="150" height="150" alt="">
+    </div>
+  </section>
+  <section id="collection" aria-labelledby="collection-title">
+    <div class="section-heading"><h2 id="collection-title">Выбери свою форму.</h2></div>
+    <div class="grid" id="gallery"></div><p id="count" class="quiet" role="status"></p>
+    <noscript><p>Для интерактивной коллекции включи JavaScript. <a href="/moon-toybox-0.1.0.tgz" download>Скачать все формы можно здесь.</a></p></noscript>
+  </section>
+  <section id="how" aria-labelledby="how-title">
+    <div class="section-heading"><h2 id="how-title">Маленькая картинка.<br>Больше возможностей.</h2></div>
+    <div class="integration">
+      <ol><li><div><h3>Сразу на месте</h3><p>WebP 48 × 48 px, прозрачный фон и заданный размер. Интерфейс не ждёт загрузки 3D.</p></div></li><li><div><h3>Чётче при приближении</h3><p>Версия 384 × 384 px подгружается, когда объект появляется рядом с видимой областью.</p></div></li><li><div><h3>Живая форма — по желанию</h3><p>Отдельный 3D-модуль добавляет вращение и реакцию на указатель, сохраняя картинку до первого кадра.</p></div></li></ol>
+      <div class="code"><pre><code>&lt;img src="/icons/moon-low.webp"
+     data-moon-icon="moon"
+     width="48" height="48" alt="Луна"&gt;
+
+import { upgradeIcons } from 'moon-toybox';
+upgradeIcons(document, { base: '/icons/' });</code></pre><a class="text-link" href="/moon-toybox-0.1.0.tgz" download>Скачать библиотеку</a></div>
+    </div>
+  </section>
+  <section class="box-finale" id="box-finale" aria-labelledby="box-title">
+    <div class="box-copy"><h2 id="box-title">Твой маленький<br>лунный набор.</h2><p><span class="handwritten-accent">Две формы. Одна коробка.</span><br>И сколько угодно новых идей.</p><a class="primary" href="/moon-toybox-0.1.0.tgz" download>Забрать всю коробку</a></div>
+    <div class="box-stage" aria-label="Перламутровые формы собираются в картонную коробку" role="img">
+      <canvas class="box-opening" width="960" height="640" aria-hidden="true"></canvas>
+      <img class="box-back" src="/cardboard-box-preview.webp" data-box-full="/cardboard-box.webp" width="1536" height="1024" loading="eager" alt="">
+      <div class="box-objects"><img data-pack="moon" src="/icons/moon-high.webp" width="160" height="160" alt=""><img data-pack="knot" src="/icons/knot-high.webp" width="140" height="140" alt=""></div>
+      <img class="box-front" src="/cardboard-front-preview.webp" data-box-full="/cardboard-front.webp" width="1536" height="1024" loading="eager" alt="">
+      <span class="box-wordmark" aria-hidden="true">moon toybox</span>
+    </div>
+  </section>
+</main>
+<footer class="shell"><a class="brand" href="#"><span>moon toybox</span></a><a href="#collection">Лаборатория материала</a></footer>
+<dialog id="detail" aria-labelledby="detail-name"><button class="close" aria-label="Закрыть">×</button><img id="detail-image" width="180" height="180" alt=""><h2 id="detail-name"></h2><p id="detail-description"></p><div id="asset-links"></div><button id="copy">Копировать HTML</button><p id="feedback" role="status"></p></dialog>
+<script type="module" src="/toybox.js"></script>
+</body></html>
