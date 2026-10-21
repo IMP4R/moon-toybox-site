@@ -50,6 +50,6 @@ export function mountOrbitShelf(){
  function onGallery(e){enabled=e.detail.enabled;reset();measure();}
  addEventListener('scroll',requestUpdate,{passive:true});addEventListener('resize',measure);reduced.addEventListener('change',()=>{reset();measure();});document.addEventListener('moon-gallery-change',onGallery);
  const observer=new ResizeObserver(measure);observer.observe(scene);observer.observe(gallery);observer.observe(box);entries.forEach(e=>e.source.addEventListener('load',measure));measure();
- const stopLive=upgradeTo3D(layer,{base:'/fields/'});
+ const stopLive=upgradeTo3D(layer,{base:'/moon-toybox-site/fields/'});
  return()=>{stopLive();cancelAnimationFrame(frame);removeEventListener('scroll',requestUpdate);removeEventListener('resize',measure);document.removeEventListener('moon-gallery-change',onGallery);observer.disconnect();reset();layer.remove();};
 }
