@@ -22,7 +22,7 @@ export function mountOrbitShelf(){
    openStart=innerWidth<=700?Math.max(0,boxRect.top-innerHeight*.76-maxScroll*.12125):Math.max(0,packStart-innerHeight*.38+80);openEnd=innerWidth<=700?Math.min(packEnd-20,openStart+Math.max(180,innerHeight*.45)):packStart+(packEnd-packStart)*.58+80;
   requestUpdate();
  }
- function update(){frame=0;if(reduced.matches||!enabled||geometry.length!==4){reset();return;}
+ function update(){frame=0;if(reduced.matches||!enabled||geometry.length!==ids.length){reset();return;}
   const p=clamp((scrollY-start)/(end-start)),handoff=smooth((p-.91)/.09),packing=clamp((scrollY-packStart)/(packEnd-packStart));
    document.dispatchEvent(new CustomEvent('moon-box-progress',{detail:{opening:clamp((scrollY-openStart)/(openEnd-openStart)),packing}}));
   hero.dataset.orbitProgress=p.toFixed(4);finale.dataset.packProgress=packing.toFixed(4);
