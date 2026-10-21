@@ -4,7 +4,7 @@ export function mountOrbitShelf(){
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const hero=document.querySelector('.hero'),scene=document.querySelector('.still-life'),gallery=document.querySelector('#gallery'),finale=document.querySelector('#box-finale'),box=finale.querySelector('.box-stage');
  const lines=scene.querySelector('.orbital-lines'),caption=scene.querySelector('.scene-caption');
- const ids=['moon','knot'],angles=[-13,12,-18,16];
+ const ids=['moon','truck','teddy','knot'],angles=[-13,12,-18,16];
  const layer=document.createElement('div');layer.className='orbit-transfer';layer.setAttribute('aria-hidden','true');document.body.append(layer);
  const boxLayer=document.createElement('div');boxLayer.className='box-travelers';boxLayer.setAttribute('aria-hidden','true');box.append(boxLayer);
  const entries=ids.map((id,i)=>{const source=scene.querySelector('.scene-'+id),image=document.createElement('div'),render=source.cloneNode();render.removeAttribute('class');render.dataset.moonIcon=id;render.removeAttribute('fetchpriority');image.className='orbit-traveler';image.dataset.object=id;image.append(render);layer.append(image);return{id,source,image,angle:angles[i]};});
