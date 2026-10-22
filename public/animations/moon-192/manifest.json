@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "shape": "moon",
+  "size": 192,
+  "frames": 96,
+  "fps": 24,
+  "columns": 8,
+  "perSheet": 64,
+  "duration": 4,
+  "amplitude": 30,
+  "tilt": -8,
+  "sheets": [
+    "sheet-0.webp",
+    "sheet-1.webp"
+  ]
+}

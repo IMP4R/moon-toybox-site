@@ -8,8 +8,9 @@
   <link rel="preload" href="/moon-toybox-site/cardboard-box-preview.webp" as="image">
   <style>html.fonts-loading body>*:not(.page-loader){visibility:hidden!important}.page-loader{display:none}html.fonts-loading .page-loader{display:grid;position:fixed;inset:0;z-index:10000;place-items:center;background:#050506}.page-loader img{width:112px;height:112px;object-fit:contain}</style>
   <script>document.documentElement.classList.add('fonts-loading');addEventListener('DOMContentLoaded',()=>{const fonts=[document.fonts.load('400 16px "Sansation"'),document.fonts.load('300 16px "Sansation"'),document.fonts.load('400 16px "Bellota"'),document.fonts.load('400 16px "Crafty Girls"')];Promise.allSettled(fonts).then(()=>{document.documentElement.classList.remove('fonts-loading');document.querySelector('.page-loader')?.remove();dispatchEvent(new Event('resize'));});});</script>
-  <script type="module" crossorigin src="/moon-toybox-site/assets/toybox-gu_GBXBr.js"></script>
+  <script type="module" crossorigin src="/moon-toybox-site/assets/toybox-CvR1BIle.js"></script>
   <link rel="modulepreload" crossorigin href="/moon-toybox-site/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/moon-toybox-site/assets/preload-helper-Bj-Uw7x7.js">
   <link rel="stylesheet" crossorigin href="/moon-toybox-site/assets/toybox-BBlNJdeC.css">
 </head>
 <body>
@@ -19,14 +20,14 @@
 <header class="shell">
   <a class="brand brand-logo" href="/toybox.html" aria-label="Moon Toybox — главная"><img src="/moon-toybox-site/icons/moon-preview.webp" data-moon-icon="moon" width="80" height="80" alt=""><span class="brand-wordmark"><span class="w-moon">moon</span> <span class="w-toybox">toybox</span></span></a>
   <nav aria-label="Главная"><a href="#collection">Коллекция</a><a href="#how">Подключение</a></nav>
-  <a class="download" href="/moon-toybox-site/moon-toybox-0.1.1.tgz" download>Скачать набор</a>
+  <a class="download" href="/moon-toybox-site/moon-toybox-0.2.0.tgz" download>Скачать набор</a>
 </header>
 <main class="shell">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy">
       <h1 id="hero-title">Формы из<br>лунного <span>света.</span></h1>
       <p class="hero-description">Чуть больше характера для твоего интерфейса. Четыре перламутровых объекта — от лёгкой иконки до живого 3D.</p>
-      <div class="hero-actions"><a class="primary" href="#collection">Рассмотреть формы</a><a class="text-link" href="./lab.html">В лабораторию</a></div>
+      <div class="hero-actions"><a class="primary" href="#collection">Рассмотреть формы</a><a class="text-link" href="./bake.html">Запечь анимацию</a></div>
     </div>
     <div class="still-life" role="img" aria-label="Лунная жемчужина, грузовичок, медвежонок и узел на чёрном фоне">
       <svg class="orbital-lines" viewBox="0 0 600 600" fill="none" aria-hidden="true"><ellipse cx="300" cy="300" rx="275" ry="112" transform="rotate(-32 300 300)"/><ellipse cx="300" cy="300" rx="213" ry="268" transform="rotate(32 300 300)"/><circle cx="300" cy="300" r="238"/></svg>
@@ -41,7 +42,7 @@
   <section id="collection" aria-labelledby="collection-title">
     <div class="section-heading"><h2 id="collection-title">Выбери свою форму.</h2></div>
     <div class="grid" id="gallery"></div><p id="count" class="quiet" role="status"></p>
-    <noscript><p>Для интерактивной коллекции включи JavaScript. <a href="/moon-toybox-site/moon-toybox-0.1.1.tgz" download>Скачать все формы можно здесь.</a></p></noscript>
+    <noscript><p>Для интерактивной коллекции включи JavaScript. <a href="/moon-toybox-site/moon-toybox-0.2.0.tgz" download>Скачать все формы можно здесь.</a></p></noscript>
   </section>
   <section id="how" aria-labelledby="how-title">
     <div class="section-heading"><h2 id="how-title">Маленькая картинка.<br>Больше возможностей.</h2></div>
@@ -52,11 +53,11 @@
      width="48" height="48" alt="Луна"&gt;
 
 import { upgradeIcons } from 'moon-toybox';
-upgradeIcons(document, { base: '/icons/' });</code></pre><a class="text-link" href="/moon-toybox-site/moon-toybox-0.1.1.tgz" download>Скачать библиотеку</a></div>
+upgradeIcons(document, { base: '/icons/' });</code></pre><a class="text-link" href="/moon-toybox-site/moon-toybox-0.2.0.tgz" download>Скачать библиотеку</a></div>
     </div>
   </section>
   <section class="box-finale" id="box-finale" aria-labelledby="box-title">
-    <div class="box-copy"><h2 id="box-title">Твой маленький<br>лунный набор.</h2><p><span class="handwritten-accent">Четыре формы. Одна коробка.</span><br>И сколько угодно новых идей.</p><a class="primary" href="/moon-toybox-site/moon-toybox-0.1.1.tgz" download>Забрать всю коробку</a></div>
+    <div class="box-copy"><h2 id="box-title">Твой маленький<br>лунный набор.</h2><p><span class="handwritten-accent">Четыре формы. Одна коробка.</span><br>И сколько угодно новых идей.</p><a class="primary" href="/moon-toybox-site/moon-toybox-0.2.0.tgz" download>Забрать всю коробку</a></div>
     <div class="box-stage" aria-label="Перламутровые формы собираются в картонную коробку" role="img">
       <canvas class="box-opening" width="960" height="640" aria-hidden="true"></canvas>
       <img class="box-back" src="/moon-toybox-site/cardboard-box-preview.webp" data-box-full="/moon-toybox-site/cardboard-box.webp" width="1536" height="1024" loading="eager" alt="">

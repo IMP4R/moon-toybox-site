@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "shape": "knot",
+  "size": 384,
+  "frames": 96,
+  "fps": 24,
+  "columns": 5,
+  "perSheet": 25,
+  "duration": 4,
+  "amplitude": 30,
+  "tilt": -8,
+  "sheets": [
+    "sheet-0.webp",
+    "sheet-1.webp",
+    "sheet-2.webp",
+    "sheet-3.webp"
+  ]
+}
