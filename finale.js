@@ -1,7 +1,7 @@
 export function mountFinale(){
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const video=document.querySelector('#ambient-video');let loaded=false;
- function sync(){if(reduced.matches||navigator.connection?.saveData||document.documentElement.dataset.moonSoftware==='true'){video.pause();video.removeAttribute('src');video.load();loaded=false;return;}
+ function sync(){if(reduced.matches||navigator.connection?.saveData||document.documentElement.dataset.moonSoftware==='true'||document.documentElement.dataset.moonPlayback==='baked'){video.pause();video.removeAttribute('src');video.load();loaded=false;return;}
   if(!loaded){video.src=innerWidth<700?'/moon-toybox-site/ambient-mobile.mp4':'/moon-toybox-site/ambient-loop.mp4';video.load();loaded=true;}
   if(document.hidden)video.pause();else video.play().catch(()=>{});
  }
